@@ -2,12 +2,12 @@
 
 module tb_pll;
 
-  reg sys_clk = 1'b0;
+reg sys_clk = 1'b0;
 reg sys_rst_n = 1'b0;
- wire vga_clk;
+wire vga_clk;
 
 pll dut (
- .sys_clk (sys_clk),
+    .sys_clk (sys_clk),
     .sys_rst_n (sys_rst_n),
     .vga_clk (vga_clk)
 );
