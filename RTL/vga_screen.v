@@ -12,7 +12,7 @@ module vga_screen(
 
 localparam S_BARS = 2'd0;
 localparam S_MUST = 2'd1;
-localparam S_END  = 2'd2;
+localparam S_END = 2'd2;
 
 wire vga_clk;
 wire key_flag;
@@ -76,7 +76,7 @@ always@(*) begin
   case(disp_state)
       S_BARS: pix_data = bar_data;
       S_MUST: pix_data = must_data;
-      S_END:  pix_data = end_data;
+      S_END: pix_data = end_data;
       default: pix_data = bar_data;
   endcase
 end
