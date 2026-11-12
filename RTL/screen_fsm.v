@@ -12,7 +12,7 @@ module screen_fsm(
 //state encoding: three states in two bits
 localparam S_BARS = 2'd0;
 localparam S_MUST = 2'd1;
-localparam S_END  = 2'd2;
+localparam S_END = 2'd2;
 
 reg [1:0] st_cur;
 reg [1:0] st_next;
@@ -31,7 +31,7 @@ always@(*) begin
   case(st_cur)
       S_BARS: if (key_press) st_next = S_MUST;
       S_MUST: if (key_press) st_next = S_END;
-      S_END:  if (key_press) st_next = S_BARS;
+      S_END: if (key_press) st_next = S_BARS;
       default: st_next = S_BARS;
   endcase
 end
