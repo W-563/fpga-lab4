@@ -2,9 +2,9 @@
 
 module tb_vga_screen;
 
-reg sys_clk = 1'b0;
+reg sys_clk =1'b0;
 reg sys_rst_n = 1'b0;
-reg key_in = 1'b1;
+reg key_in= 1'b1;
 wire hsync, vsync;
 wire [15:0] rgb;
 
@@ -52,7 +52,7 @@ $display("T1b t=%t h=%d v=%d st_cur=%d disp_state=%d rgb=%h", $time, cnt_h, cnt_
 //T2 click 1 with press and release bounce: BARS -> MUST
 #22200629 key_in = 1'b0;
 for (i=0; i<4; i=i+1) begin
-    #1000000 key_in = 1'b1;
+#1000000 key_in= 1'b1;
     #1000000 key_in = 1'b0;
 end
 //t=38000000: stable low; key_press about 20 ms later, st_cur=1
@@ -64,8 +64,8 @@ $display("T2a t=%t h=%d v=%d st_cur=%d disp_state=%d rgb=%h", $time, cnt_h, cnt_
 $display("T2b t=%t h=%d v=%d st_cur=%d disp_state=%d rgb=%h", $time, cnt_h, cnt_v, st_cur, disp_state, rgb);
 #5000629 key_in = 1'b1;
 for (i=0; i<4; i=i+1) begin
-    #1000000 key_in = 1'b0;
-    #1000000 key_in = 1'b1;
+    #1000000 key_in =1'b0;
+ #1000000 key_in =1'b1;
 end
 
 //T3 click 2, held for 300 ms: MUST -> END only once
